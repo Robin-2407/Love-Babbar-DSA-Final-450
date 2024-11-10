@@ -1,5 +1,4 @@
 import java.util.PriorityQueue;
-import java.util.Collections;
 
 public class KthSmallest {
     public static void main(String[] args) {
@@ -11,24 +10,20 @@ public class KthSmallest {
     }
 
     public static int findKthSmallest(int[] array, int k) {
-        // Max heap with a comparator to reverse the order
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        // Min heap to store all elements of the array
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
-        // Add first k elements to the max heap
+        // Add all elements to the min heap
+        for (int num : array) {
+            minHeap.add(num);
+        }
+
+        // Extract the smallest element k times
+        int kthSmallest = -1;
         for (int i = 0; i < k; i++) {
-            maxHeap.add(array[i]);
+            kthSmallest = minHeap.poll();
         }
 
-        // For the remaining elements in the array
-        for (int i = k; i < array.length; i++) {
-            // If the current element is smaller than the root of the max heap
-            if (array[i] < maxHeap.peek()) {
-                maxHeap.poll();          // Remove the largest element in the heap
-                maxHeap.add(array[i]);   // Add the current element
-            }
-        }
-
-        // The root of the heap is the k-th smallest element
-        return maxHeap.peek();
+        return kthSmallest;
     }
 }
