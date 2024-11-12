@@ -30,3 +30,7 @@ public class Sort012 {
         System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 }
+
+
+// Time Complexity: 𝑂(𝑛)
+// Space Complexity: 𝑂(1)
