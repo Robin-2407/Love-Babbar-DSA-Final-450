@@ -21,3 +21,6 @@ public class Solution {
         System.out.println("The maximum sum of a contiguous subarray is: " + result);
     }
 }
+
+// Time Complexity: O(n) — Only one pass through the array is needed.
+// Space Complexity: O(1) — Only a constant amount of space is used.

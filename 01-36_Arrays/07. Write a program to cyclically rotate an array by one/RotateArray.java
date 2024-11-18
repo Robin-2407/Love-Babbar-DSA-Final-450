@@ -24,3 +24,6 @@ public class RotateArray {
         arr[0] = last;
     }
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)

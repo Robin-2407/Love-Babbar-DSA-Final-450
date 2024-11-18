@@ -4,7 +4,7 @@ class Solution {
     public static int getMinDiff(int[] arr, int k) {
         int n = arr.length;
         if (n == 1) {
-            return 0;  // Only one tower, so the difference is zero.
+            return 0; // Only one tower, so the difference is zero.
         }
 
         // Sort the array to get towers in ascending order of heights.
@@ -22,10 +22,10 @@ class Solution {
             if (arr[i + 1] - k < 0) {
                 continue;
             }
-            
+
             int minHeight = Math.min(smallest, arr[i + 1] - k);
             int maxHeight = Math.max(largest, arr[i] + k);
-            
+
             result = Math.min(result, maxHeight - minHeight);
         }
 
@@ -33,12 +33,15 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {1, 5, 8, 10};
+        int[] arr1 = { 1, 5, 8, 10 };
         int k1 = 2;
         System.out.println("Minimum difference: " + getMinDiff(arr1, k1)); // Output: 5
 
-        int[] arr2 = {3, 9, 12, 16, 20};
+        int[] arr2 = { 3, 9, 12, 16, 20 };
         int k2 = 3;
         System.out.println("Minimum difference: " + getMinDiff(arr2, k2)); // Output: 11
     }
 }
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(1)

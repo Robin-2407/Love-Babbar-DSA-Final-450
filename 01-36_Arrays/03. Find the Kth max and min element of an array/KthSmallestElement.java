@@ -14,8 +14,8 @@ public class KthSmallestElement {
         // Process the remaining elements in the array
         for (int i = k; i < arr.length; i++) {
             if (arr[i] < maxHeap.peek()) {
-                maxHeap.poll();  // Remove the largest element
-                maxHeap.add(arr[i]);  // Add the new element
+                maxHeap.poll(); // Remove the largest element
+                maxHeap.add(arr[i]); // Add the new element
             }
         }
 
@@ -24,8 +24,11 @@ public class KthSmallestElement {
     }
 
     public static void main(String[] args) {
-        int[] arr = {7, 10, 4, 3, 20, 15};
+        int[] arr = { 7, 10, 4, 3, 20, 15 };
         int k = 3;
         System.out.println("The " + k + "th smallest element is " + findKthSmallest(arr, k));
     }
 }
+
+// Time Complexity: 𝑂(𝑛log⁡𝑛)
+// Space Complexity: O(1)

@@ -28,3 +28,6 @@ public class MoveNegatives {
         System.out.println("Array after moving negatives: " + Arrays.toString(arr));
     }
 }
+
+// O(n) time complexity
+// O(1) space complexity
