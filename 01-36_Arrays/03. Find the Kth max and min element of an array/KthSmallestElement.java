@@ -30,5 +30,5 @@ public class KthSmallestElement {
     }
 }
 
-// Time Complexity: 𝑂(𝑛log⁡𝑛)
-// Space Complexity: O(1)
+// Time Complexity: 𝑂(𝑛log⁡k)
+// Space Complexity: O(k)
