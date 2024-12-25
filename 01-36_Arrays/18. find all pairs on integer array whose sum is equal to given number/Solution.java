@@ -64,3 +64,12 @@ public class Solution {
         System.out.println(optimized(arr2)); // Output: [[-1, 1], [-1, 2], [0, 0]]
     }
 }
+
+// bruteForce
+// TC: O(n^2) -> nested loops iterating over the prices array
+// SC: O(n) -> using a set to store the unique pairs
+// Note: If we use treeset instead of hashset, the space complexity will be O(nlog n)
+
+// optimized
+// TC: O(n log n) -> sorting the array
+// SC: O(1) -> only using a constant amount of space
