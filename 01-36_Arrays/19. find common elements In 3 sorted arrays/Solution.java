@@ -23,7 +23,9 @@ public class Solution {
         int i = 0, j = 0, k = 0;
         while (i < arr1.size() && j < arr2.size() && k < arr3.size()) {
             if (arr1.get(i) == arr2.get(j) && arr2.get(j) == arr3.get(k)) {
-                result.add(arr1.get(i));
+                if (result.size() > 0 && result.get(result.size() - 1) == arr1.get(i)) {
+                    result.add(arr1.get(i));
+                }
                 i++;
                 j++;
                 k++;
