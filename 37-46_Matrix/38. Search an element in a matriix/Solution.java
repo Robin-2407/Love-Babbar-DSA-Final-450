@@ -1,9 +1,21 @@
-class Solution {
-    public static boolean searchMatrix(int[][] matrix, int target) {
-        int row = 0;
-        int col = matrix[0].length - 1;
 
-        while (row < matrix.length && col >= 0) {
+public class Solution {
+    public static boolean bruteForce(int matrix[][], int target) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == target) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean optimal(int matrix[][], int target) {
+        int row = 0;
+        int col = matrix[0].length-1;
+
+        while(row < matrix.length && col >= 0) {
             if (matrix[row][col] == target) {
                 return true;
             } else if (matrix[row][col] > target) {
@@ -18,15 +30,21 @@ class Solution {
 
     public static void main(String[] args) {
         int[][] matrix = {
-                { 1, 4, 7, 11 },
-                { 2, 5, 8, 12 },
-                { 3, 6, 9, 16 },
-                { 10, 13, 14, 17 }
+                { 1, 3, 5, 7 },
+                { 10, 11, 16, 20 },
+                { 23, 30, 34, 60 }
         };
-        int target = 8;
-        System.out.println(searchMatrix(matrix, target));
+        int target = 3;
+        System.out.println(bruteForce(matrix, target));
+        System.out.println(optimal(matrix, target));
     }
 }
 
-// Time Complexity O(m+n) as either it will move one row or one column at a time
+
+// Brute force approach
+// Time complexity O(m*n)
+// Space Complexity O(1)
+
+// Optimized approach
+// Time complexity O(m+n)
 // Space Complexity O(1)
