@@ -54,5 +54,7 @@ class Solution {
     }
 }
 
+// optimized approach
 // Time Complexity is O(m*n)
 // Spaace Complexity is O(1) excluding the arraylist for output
+
